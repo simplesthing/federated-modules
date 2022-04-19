@@ -1,8 +1,8 @@
 import "./header.css";
 
-import { Button } from "../../atoms/Button/Button";
+import { Button } from "atoms/Button/Button";
 import React from "react";
-import SvgImg from "../../atoms/SvgImg/svg-img";
+import SvgImg from "atoms/SvgImg/svg-img";
 
 type User = {
   name: string;

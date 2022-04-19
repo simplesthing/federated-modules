@@ -2,8 +2,8 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Header } from "./Header";
 import React from "react";
-import moonStars from "../../assets/moon-stars.svg";
-import stars from "../../assets/stars.svg";
+import moonStars from "assets/moon-stars.svg";
+import stars from "assets/stars.svg";
 
 export default {
   title: "Molecules/Header",

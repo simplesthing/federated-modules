@@ -2,7 +2,14 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 
 module.exports = {
-    // other webpack configs...
+    module: {
+        rules: [{
+            loader: "babel-loader",
+            options: {
+                rootMode: "upward",
+            },
+        },]
+    },
     plugins: [
         new ModuleFederationPlugin({
             name: "app_one_remote",

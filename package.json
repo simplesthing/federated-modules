@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/simplesthing/federated-modules#readme",
   "devDependencies": {
+    "@babel/preset-typescript": "^7.16.7",
+    "babel-plugin-tsconfig-paths-module-resolver": "^1.0.3",
     "webpack": "^5.72.0"
   }
 }
