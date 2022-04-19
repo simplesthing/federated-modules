@@ -1,0 +1,26 @@
+{
+  "name": "@simplesthing/federated-modules",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "description": "This is app is setup using yarn workspaces and webpack 5 module federation.",
+  "scripts": {
+    "storybook": "yarn workspace @simplesthing/component-library storybook"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simplesthing/federated-modules.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/simplesthing/federated-modules/issues"
+  },
+  "homepage": "https://github.com/simplesthing/federated-modules#readme",
+  "devDependencies": {
+    "webpack": "^5.72.0"
+  }
+}
