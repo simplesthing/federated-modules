@@ -2,6 +2,7 @@ import "./header.css";
 
 import { Button } from "../../atoms/Button/Button";
 import React from "react";
+import SvgImg from "../../atoms/SvgImg/svg-img";
 
 type User = {
   name: string;
@@ -28,7 +29,7 @@ export const Header = ({
     <header>
       <div className="wrapper">
         <div>
-          {logo && <img src={logo} alt="" />}
+          {logo && <SvgImg svgSrc={logo} altText="" />}
           <h1>{text}</h1>
         </div>
         <div>
