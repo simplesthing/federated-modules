@@ -1,6 +1,6 @@
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
-
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   "webpackFinal": async (config) => {
@@ -8,7 +8,7 @@ module.exports = {
       name: "components",
       filename: 'remoteEntry.js',
       exposes: {
-        './Button': 'src/atoms/Button',
+        './Button': './src/atoms/Button',
       },
       shared: {
         react: {
@@ -19,7 +19,7 @@ module.exports = {
     config.resolve.plugins.push(new TsconfigPathsPlugin({
       extensions: config.resolve.extensions,
     }))
-
+    console.log(JSON.stringify(config))
     return config
   },
   "stories": [

@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
 
-function App() {
+import ErrorBoundary from "./ErrorBoundary";
+
+const RemoteButton = React.lazy(() => import("components/Button"));
+
+const App = () => {
+  console.log(RemoteButton);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Typescript</h1>
+      <h2>Astrology</h2>
+      <ErrorBoundary>
+        <React.Suspense fallback="Loading Button">
+          <RemoteButton />
+        </React.Suspense>
+      </ErrorBoundary>
     </div>
   );
-}
+};
 
 export default App;
