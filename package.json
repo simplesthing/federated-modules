@@ -9,7 +9,7 @@
   "scripts": {
     "components": "yarn workspace @simplesthing/components storybook",
     "components:build": "yarn workspace @simplesthing/components build-storybook",
-    "components:deploy": "storybook-to-ghpages"
+    "components:deploy": "storybook-to-ghpages --packages packages"
   },
   "repository": {
     "type": "git",
