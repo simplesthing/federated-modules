@@ -1,5 +1,6 @@
 {
-  "name": "@simplesthing/component-library",
+  "name": "@simplesthing/components",
+  "description": "Federated React modules",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
