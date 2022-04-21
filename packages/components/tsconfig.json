@@ -2,13 +2,19 @@
   "extends": "../../base.tsconfig",
   "compilerOptions": {
     "baseUrl": ".",
-    "paths": {
-      "assets/*": ["src/assets/*"],
-      "atoms/*":["src/atoms/*"],
-      "molecules/*":["src/molecules/*"]
-    }
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "outDir": "./dist",
+    "rootDir": "../../",
+    "sourceMap": true
   },
   "include": [
     "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "*.d.ts"
   ]
 }

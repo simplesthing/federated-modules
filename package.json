@@ -23,10 +23,12 @@
   },
   "homepage": "https://github.com/simplesthing/federated-modules#readme",
   "devDependencies": {
+    "@babel/core": "^7.17.9",
     "@babel/preset-typescript": "^7.16.7",
     "@storybook/storybook-deployer": "^2.8.11",
     "babel-plugin-tsconfig-paths-module-resolver": "^1.0.3",
     "tsconfig-paths-webpack-plugin": "^3.5.2",
+    "typescript": "^4.6.3",
     "webpack": "^5.72.0"
   }
 }
