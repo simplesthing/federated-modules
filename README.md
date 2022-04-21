@@ -1,12 +1,12 @@
 # federated-modules
 
-Webpack 5 module federation demo
-
-This is app is using yarn workspace mono repository style. Workspaces have an advantage of sharing development dependencies, and scripts, across all packages in the same repository while maintaining separation of runtime dependencies for each application when it is bundled and deployed.
+Webpack 5 module federation demo using yarn workspace and storybook for react components.
 
 ## components
 
-[Storybook](https://simplesthing.github.io/federated-modules/@simplesthing/components/index.html)
+[Code](./packages/components/README.md)
+
+[App](https://simplesthing.github.io/federated-modules/@simplesthing/components/index.html)
 
 The container application `components` is a storybook app that contains the UI components that will be shared. Storybook allows for separation of business and presentation logic by building only the view components.
 
