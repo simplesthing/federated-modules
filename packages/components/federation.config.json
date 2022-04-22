@@ -1,0 +1,6 @@
+{
+    "name": "components",
+    "exposes": {
+        "./Button": "./src/atoms/Button/Button.tsx"
+    }
+}

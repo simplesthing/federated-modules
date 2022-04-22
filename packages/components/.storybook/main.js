@@ -2,16 +2,14 @@ const {
   withStorybookModuleFederation,
 } = require('storybook-module-federation');
 
-const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
-
+// const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+const deps = require('../package.json').dependencies;
+const federationConfig = require('../federation.config.json')
 
 
 module.exports = withStorybookModuleFederation({
-  name: 'components',
+  ...federationConfig,
   filename: '__remote/entry.js',
-  exposes: {
-    './Button': require.resolve('../src/atoms/Button/Button.jsx'),
-  },
   shared: {
     react: {
       singleton: true,

@@ -5,6 +5,7 @@
   "scripts": {
     "start": "start-storybook -p 9000 -s assets",
     "build:storybook": "build-storybook -s assets",
+    "build:types": "make-federated-types",
     "serve": "serve storybook-static -p 3000"
   },
   "dependencies": {
