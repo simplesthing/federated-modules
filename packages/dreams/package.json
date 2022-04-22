@@ -1,12 +1,12 @@
 {
-  "name": "@simplesthing/astrology",
+  "name": "@simplesthing/dreams",
   "version": "0.0.0",
   "private": true,
   "devDependencies": {},
   "scripts": {
-    "start": "webpack serve",
+    "start": "webpack serve --port 8001",
     "build": "webpack --mode production",
-    "serve": "serve dist -p 3001",
+    "serve": "serve dist -p 3002",
     "clean": "rm -rf dist"
   },
   "dependencies": {

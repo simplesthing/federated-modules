@@ -1,8 +1,8 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import React from "react";
-import Stars from "assets/stars.svg";
-import SvgImg from "./svg-img";
+import Stars from "../../../../assets/stars.svg";
+import { SvgImg } from "./SvgImg";
 
 export default {
   title: "Atoms/SvgImg",

@@ -1,39 +1,29 @@
-const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
-const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+const {
+  withStorybookModuleFederation,
+} = require('storybook-module-federation');
+
+// const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+const deps = require('../package.json').dependencies;
+const federationConfig = require('../federation.config.json')
 
 
-module.exports = {
-  "webpackFinal": async (config) => {
-    config.plugins.push(new ModuleFederationPlugin({
-      name: "components",
-      filename: 'remoteEntry.js',
-      exposes: {
-        './Button': 'src/atoms/Button',
-      },
-      shared: {
-        react: {
-          eager: true,
-        },
-      },
-    }))
-    config.resolve.plugins.push(new TsconfigPathsPlugin({
-      extensions: config.resolve.extensions,
-    }))
-
-    return config
+module.exports = withStorybookModuleFederation({
+  ...federationConfig,
+  filename: '__remote/entry.js',
+  shared: {
+    react: {
+      singleton: true,
+      requiredVersion: false,
+    },
+    'react-dom': {
+      singleton: true,
+      requiredVersion: false,
+    },
   },
-  "stories": [
-    "../src/**/*.stories.mdx",
-    "../src/**/*.stories.@(js|jsx|ts|tsx)"
-  ],
-  "addons": [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "@storybook/addon-interactions",
-    "@storybook/preset-create-react-app"
-  ],
-  "framework": "@storybook/react",
-  "core": {
-    "builder": "@storybook/builder-webpack5"
-  }
-}
+})({
+  stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
+  addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
+  core: {
+    builder: 'webpack5',
+  },
+});
