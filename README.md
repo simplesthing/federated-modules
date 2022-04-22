@@ -4,7 +4,7 @@ Webpack 5 module federation demo using yarn workspace and storybook for react co
 
 ## components
 
-The "remote" application, `components`, is a storybook application that contains the UI components that will be exposed to "host" applications.
+The "remote" application, `components`, is a storybook application that exposes UI components.
 
 
 [Code](./packages/components/README.md)
