@@ -6,11 +6,7 @@ Webpack 5 module federation demo using yarn workspace and storybook for react co
 
 The "remote" application, `components`, is a storybook application that exposes UI components.
 
-
-[Code](./packages/components/README.md)
-
 [App](https://simplesthing.github.io/federated-modules/@simplesthing/components/index.html)
-
 
 ## astrology & dreams
 
