@@ -4,16 +4,14 @@ Webpack 5 module federation demo using yarn workspace and storybook for react co
 
 ## components
 
+The "remote" application, `components`, is a storybook application that contains the UI components that will be exposed to "host" applications.
+
+
 [Code](./packages/components/README.md)
 
 [App](https://simplesthing.github.io/federated-modules/@simplesthing/components/index.html)
 
-The container application `components` is a storybook app that contains the UI components that will be shared. Storybook allows for separation of business and presentation logic by building only the view components.
-
-The component library follows the principles of atomic design, in that when evaluating a piece of user interface it should begin it's evaluation with the smallest unit and build it's way upward towards increasingly larger compositions. The [general pattern](https://www.componentdriven.org/) is `atom -> molecule -> organism -> template -> page`.
-
-A `page` is the application wrapper that connects the `template` to the application's data. This workflow aides in speed of development over time as it enforces the necessary stubbing of data and inputs, test case scenarios, and implementations that the component is capable of.
 
 ## astrology & dreams
 
-Remote applications `astrology` and `dreams` will be consuming UI shared components from the component library container application.
+"Remote" applications `astrology` and `dreams` are consuming the remote UI from the storybook UI library.
