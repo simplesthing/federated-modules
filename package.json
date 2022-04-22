@@ -16,7 +16,7 @@
     "components:serve": "yarn workspace @simplesthing/components serve",
     "components:deploy": "storybook-to-ghpages --packages packages",
     "dreams": "yarn workspace @simplesthing/dreams start",
-    "build:types": "tsc -b"
+    "postinstall": "patch-package"
   },
   "repository": {
     "type": "git",
@@ -41,7 +41,10 @@
     "babel-loader": "^8.2.5",
     "babel-plugin-tsconfig-paths-module-resolver": "^1.0.3",
     "html-webpack-plugin": "^5.5.0",
+    "patch-package": "^6.4.7",
+    "postinstall-postinstall": "^2.1.0",
     "serve": "^13.0.2",
+    "svg-url-loader": "^7.1.1",
     "ts-loader": "^9.2.8",
     "tsconfig-paths-webpack-plugin": "^3.5.2",
     "typescript": "^4.6.3",

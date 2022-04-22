@@ -1,6 +1,7 @@
 {
     "name": "components",
     "exposes": {
-        "./Button": "./src/atoms/Button/Button.tsx"
+        "./Button": "./src/atoms/Button/Button.tsx",
+        "./Header": "./src/molecules/Header/Header.tsx"
     }
 }

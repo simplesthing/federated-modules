@@ -1,0 +1,49 @@
+diff --git a/node_modules/@pixability-ui/federated-types/cli.js b/node_modules/@pixability-ui/federated-types/cli.js
+index 5a6a52a..c697d01 100755
+--- a/node_modules/@pixability-ui/federated-types/cli.js
++++ b/node_modules/@pixability-ui/federated-types/cli.js
+@@ -24,17 +24,17 @@ const findFederationConfig = (base) => {
+     let files = fs.readdirSync(base);
+     let queue = [];
+ 
+-    for( let i = 0; i < files.length; i++ ) {
++    for (let i = 0; i < files.length; i++) {
+         const file = files[i];
+         const newBase = path.join(base, file);
+         if (file === 'federation.config.json') {
+             return path.resolve('./', newBase);
+-        } else if(fs.statSync(newBase).isDirectory() && !newBase.includes('node_modules')) {
++        } else if (fs.statSync(newBase).isDirectory() && !newBase.includes('node_modules')) {
+             queue.push(newBase);
+         }
+     }
+ 
+-    for( let i = 0; i < queue.length; i++ ) {
++    for (let i = 0; i < queue.length; i++) {
+         return findFederationConfig(queue[i]);
+     }
+ };
+@@ -90,7 +90,9 @@ try {
+         const exposeName = compileKeys.find(key => federationConfig.exposes[key].endsWith(name)) || name;
+         const regex = RegExp(`"${name}"`, 'g');
+         const moduleDeclareName = path.join(federationConfig.name, exposeName).replace(/[\\/]/g, '/');
+-        typing = typing.replace(regex, `"${moduleDeclareName}"`);
++        const split = moduleDeclareName.split('/')
++        const len = split.length
++        typing = typing.replace(regex, `"${split[0]}/${split[len - 1]}"`);
+     });
+ 
+     console.log('writing typing file:', outFile);
+@@ -98,9 +100,9 @@ try {
+     fs.writeFileSync(outFile, typing);
+ 
+     // if we are writing to the node_modules/@types directory, add a package.json file
+-    if (outputDir.includes( os.platform() === "win32"
+-                ? "node_modules\\@types"
+-                : "node_modules/@types")) {
++    if (outputDir.includes(os.platform() === "win32"
++        ? "node_modules\\@types"
++        : "node_modules/@types")) {
+         const packageJsonPath = path.resolve(outputDir, 'package.json');
+ 
+         if (!fs.existsSync(packageJsonPath)) {

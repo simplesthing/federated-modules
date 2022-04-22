@@ -1,7 +1,3 @@
 {
-    "extends": "./base.tsconfig",
-    "include": [
-        "packages",
-        "packages/components/custom.d.ts"
-    ]
+    "extends": "./base.tsconfig"
 }

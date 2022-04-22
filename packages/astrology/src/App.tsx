@@ -1,18 +1,27 @@
 import React from "react";
+import Stars from "../../assets/stars.svg";
 
-const Button = React.lazy(() =>
-  import("components/Button").then((module) => {
-    // console.log(module)
-    return { default: module.Button };
+const Header = React.lazy(() =>
+  import("components/Header").then((module) => {
+    return { default: module.Header };
   })
 );
+
+const onEvent = () => {
+  console.log("event!");
+};
 
 export const App = () => {
   return (
     <div>
-      <h1>App</h1>
       <React.Suspense fallback="Loading...">
-        <Button primary label="My button" />
+        <Header
+          text="astrology"
+          logo={Stars}
+          onCreateAccount={onEvent}
+          onLogin={onEvent}
+          onLogout={onEvent}
+        />
       </React.Suspense>
     </div>
   );

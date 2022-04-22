@@ -5,16 +5,14 @@
     "composite": true,
     "declaration": true,
     "declarationMap": true,
-    "sourceMap": true
+    "sourceMap": true,
   },
   "include": [
-    "src",
-    "custom.d.ts"
+    "src"
   ],
   "exclude": [
     "node_modules",
-    "dist",
-    "src/**/*.stories.tsx",
-    "*.d.ts"
+    "storybook-static",
+    "src/**/*.stories.tsx"
   ]
 }

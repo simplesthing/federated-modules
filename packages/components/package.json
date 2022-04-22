@@ -3,8 +3,8 @@
   "description": "Federated React modules",
   "version": "0.1.0",
   "scripts": {
-    "start": "start-storybook -p 9000 -s assets",
-    "build:storybook": "build-storybook -s assets",
+    "start": "start-storybook -p 9000",
+    "build:storybook": "build-storybook",
     "build:types": "make-federated-types",
     "serve": "serve storybook-static -p 3000"
   },

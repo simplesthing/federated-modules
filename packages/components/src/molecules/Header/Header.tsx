@@ -2,7 +2,7 @@ import "./header.css";
 
 import { Button } from "../../atoms/Button/Button";
 import React from "react";
-import { SvgImg } from "../../atoms";
+import { SvgImg } from "../../atoms/SvgImg/SvgImg";
 
 type User = {
   name: string;
