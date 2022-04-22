@@ -1,48 +1,44 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ModuleFederationPlugin = require('webpack').container.ModuleFederationPlugin;
-const path = require('path');
+const webpack = require('webpack');
+
+const { ModuleFederationPlugin } = webpack.container;
 
 module.exports = {
-  entry: './src/index',
+  entry: './src/entry.js',
   mode: 'development',
   devServer: {
-    static: {
-      directory: path.join(__dirname, 'dist'),
-    },
-    port: 3001,
-  },
-  output: {
-    publicPath: 'auto',
+    hot: true,
+    port: 8000,
+    // open: true,
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js'],
+    extensions: ['.jsx', '.js'],
   },
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.jsx?/,
         loader: 'babel-loader',
-        exclude: /node_modules/,
-        options: {
-          presets: ['@babel/preset-react', '@babel/preset-typescript'],
-        },
       },
     ],
   },
   plugins: [
+    new HtmlWebpackPlugin(),
     new ModuleFederationPlugin({
       name: 'astrology',
       remotes: {
-        components: 'components@http://localhost:6006/remoteEntry.js',
+        components: 'components@//localhost:9000/__remote/entry.js',
       },
       shared: {
         react: {
-          eager: true,
+          singleton: true,
+          requiredVersion: false,
+        },
+        'react-dom': {
+          singleton: true,
+          requiredVersion: false,
         },
       },
-    }),
-    new HtmlWebpackPlugin({
-      template: './public/index.html'
     }),
   ],
 };

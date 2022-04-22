@@ -3,13 +3,13 @@
   "description": "Federated React modules",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "start-storybook -p 9000 -s assets",
+    "build": "build-storybook -s assets"
+  },
   "dependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
-  },
-  "scripts": {
-    "storybook": "start-storybook -p 6006 -s assets",
-    "build-storybook": "build-storybook -s assets"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^6.4.22",
@@ -19,7 +19,6 @@
     "@storybook/builder-webpack5": "^6.4.22",
     "@storybook/manager-webpack5": "^6.4.22",
     "@storybook/react": "^6.4.22",
-    "babel-loader": "^8.2.5",
     "storybook-module-federation": "^0.6.2"
   }
 }

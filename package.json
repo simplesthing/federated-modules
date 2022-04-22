@@ -7,7 +7,8 @@
   ],
   "description": "This is app is setup using yarn workspaces and webpack 5 module federation.",
   "scripts": {
-    "components": "yarn workspace @simplesthing/components storybook",
+    "astro": "yarn workspace @simplesthing/astrology start",
+    "components": "yarn workspace @simplesthing/components start",
     "components:build": "yarn workspace @simplesthing/components build-storybook",
     "components:deploy": "storybook-to-ghpages --packages packages"
   },
@@ -24,11 +25,18 @@
   "homepage": "https://github.com/simplesthing/federated-modules#readme",
   "devDependencies": {
     "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
     "@babel/preset-typescript": "^7.16.7",
     "@storybook/storybook-deployer": "^2.8.11",
+    "babel-loader": "^8.2.5",
     "babel-plugin-tsconfig-paths-module-resolver": "^1.0.3",
+    "html-webpack-plugin": "^5.5.0",
+    "serve": "^13.0.2",
     "tsconfig-paths-webpack-plugin": "^3.5.2",
     "typescript": "^4.6.3",
-    "webpack": "^5.72.0"
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.8.1"
   }
 }
