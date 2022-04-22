@@ -12,13 +12,13 @@ module.exports = {
     // open: true,
   },
   resolve: {
-    extensions: ['.jsx', '.js'],
+    extensions: ['.tsx', '.ts', '.js'],
   },
   module: {
     rules: [
       {
-        test: /\.jsx?/,
-        loader: 'babel-loader',
+        test: /\.tsx?/,
+        loader: 'ts-loader',
       },
     ],
   },

@@ -1,6 +1,11 @@
-import React from 'react';
+import React from "react";
 
-const Button = React.lazy(() => import('components/Button'));
+const Button = React.lazy(() =>
+  import("components/Button").then((module) => {
+    // console.log(module)
+    return { default: module.Button };
+  })
+);
 
 export const App = () => {
   return (

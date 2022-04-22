@@ -8,17 +8,17 @@ module.exports = {
   mode: 'development',
   devServer: {
     hot: true,
-    port: 8000,
+    port: 8001,
     // open: true,
   },
   resolve: {
-    extensions: ['.jsx', '.js'],
+    extensions: ['.tsx', '.ts', '.js'],
   },
   module: {
     rules: [
       {
-        test: /\.jsx?/,
-        loader: 'babel-loader',
+        test: /\.tsx?/,
+        loader: 'ts-loader',
       },
     ],
   },
