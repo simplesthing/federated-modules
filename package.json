@@ -10,7 +10,8 @@
     "astro": "yarn workspace @simplesthing/astrology start",
     "components": "yarn workspace @simplesthing/components start",
     "components:build": "yarn workspace @simplesthing/components build-storybook",
-    "components:deploy": "storybook-to-ghpages --packages packages"
+    "components:deploy": "storybook-to-ghpages --packages packages",
+    "dreams": "yarn workspace @simplesthing/dreams start"
   },
   "repository": {
     "type": "git",
