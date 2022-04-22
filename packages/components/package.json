@@ -2,10 +2,10 @@
   "name": "@simplesthing/components",
   "description": "Federated React modules",
   "version": "0.1.0",
-  "private": true,
   "scripts": {
     "start": "start-storybook -p 9000 -s assets",
-    "build": "build-storybook -s assets"
+    "build:storybook": "build-storybook -s assets",
+    "serve": "serve storybook-static -p 3000"
   },
   "dependencies": {
     "react": "^18.0.0",

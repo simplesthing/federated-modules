@@ -5,16 +5,16 @@
     "composite": true,
     "declaration": true,
     "declarationMap": true,
-    "outDir": "./dist",
-    "rootDir": "../../",
     "sourceMap": true
   },
   "include": [
-    "src"
+    "src",
+    "custom.d.ts"
   ],
   "exclude": [
     "node_modules",
     "dist",
+    "src/**/*.stories.tsx",
     "*.d.ts"
   ]
 }

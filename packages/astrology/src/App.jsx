@@ -1,6 +1,9 @@
 import React from 'react';
 
-const Button = React.lazy(() => import('components/Button'));
+const Button = React.lazy(() => import('components/Button').then(module => {
+  console.log(module)
+  return module
+}));
 
 export const App = () => {
   return (
