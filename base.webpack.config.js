@@ -30,7 +30,7 @@ module.exports = (port) => ({
     plugins: [
         new HtmlWebpackPlugin(),
         new ModuleFederationPlugin({
-            name: "astrology",
+            name: "federated",
             remotes: {
                 components: "components@//localhost:9000/__remote/entry.js",
             },

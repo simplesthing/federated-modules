@@ -14,7 +14,7 @@
     "components:build": "yarn workspace @simplesthing/components build-storybook",
     "components:types": "yarn workspace @simplesthing/components build:types",
     "components:serve": "yarn workspace @simplesthing/components serve",
-    "components:deploy": "storybook-to-ghpages --packages packages",
+    "deploy": "storybook-to-ghpages --packages packages --dry-run",
     "dreams": "yarn workspace @simplesthing/dreams start",
     "postinstall": "patch-package"
   },
