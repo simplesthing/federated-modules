@@ -6,10 +6,14 @@ Webpack 5 module federation demo using yarn workspace and storybook for react co
 
 The "remote" application, `components`, is a storybook application that exposes some UI components; `Button`, `SvgImage` and `Header`.
 
-[Live Storybook App Demo](https://simplesthing.github.io/federated-modules/@simplesthing/components/index.html)
-
-<img src="https://github.com/simplesthing/federated-modules/blob/main/packages/assets/components-storybook.png?raw=true"  width="500" />
+<img src="https://github.com/simplesthing/federated-modules/blob/main/packages/assets/components-storybook.png?raw=true"  width="400" />
 
 ## astrology & dreams
 
 "Remote" applications `astrology` and `dreams` are consuming the remote UI from the storybook components **application** rather than bundling them into their own builds.
+
+<img src="https://github.com/simplesthing/federated-modules/blob/main/packages/assets/component-federation-config.png?raw=true"  width="400"/> <img src="https://github.com/simplesthing/federated-modules/blob/main/packages/assets/federation-module-plugin.png?raw=true"  width="400"/>
+
+See video below for a simple contrived example of the consumption and live updating of a color value in header component CSS file from the storybook application. Both astrology and dreams applications are pulling their header component into their bundle from the live components application that is serving the remote components via webpack module federation.
+
+<video controls src='https://github.com/simplesthing/federated-modules/blob/main/packages/assets/federated-demo.mp4?raw=true' width="500"/>
