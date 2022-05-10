@@ -9,7 +9,7 @@ const federationConfig = require('../federation.config.json')
 
 module.exports = withStorybookModuleFederation({
   ...federationConfig,
-  filename: '__remote/entry.js',
+  filename: 'remoteEntry.js',
   shared: {
     react: {
       singleton: true,
