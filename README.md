@@ -16,4 +16,6 @@ The "remote" application, `components`, is a storybook application that exposes 
 
 See video below for a simple contrived example of the consumption and live updating of a color value in header component CSS file from the storybook application. Both astrology and dreams applications are pulling their header component into their bundle from the live components application that is serving the remote components via webpack module federation.
 
-<video controls src='https://github.com/simplesthing/federated-modules/blob/main/packages/assets/federated-demo.mp4?raw=true' width="500"/>
+
+https://user-images.githubusercontent.com/1259113/167704129-81f86527-fd0b-4042-9b17-33ace557de94.mp4
+
